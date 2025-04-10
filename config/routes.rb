@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  post "books/:id/reserve", to: "books#reserve", as: :book_reserve
+  get "books/:id/reservation", to: "books#reservation", as: :book_reservation
 end
