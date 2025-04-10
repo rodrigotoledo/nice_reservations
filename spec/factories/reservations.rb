@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :reservation do
-    books { nil }
-    user_email { "MyString" }
+    association :book
+    user_email { Faker::Internet.email }
   end
 end
