@@ -5,6 +5,10 @@ class Book < ApplicationRecord
     return false if reserved?
 
     reservations.build(user_email: user_email).save
-    update!(reserverd: true)
+    update!(reserved: true)
+  end
+
+  def status
+    reserved? ? "reserved" : nil
   end
 end
