@@ -7,14 +7,14 @@ RSpec.describe "Books Reserve", type: :request do
   describe "POST /books/:id/reserve" do
     context "Can reserve a book" do
       it "status 200" do
-        post book_reserve_path(book), params: {user_email: "user@example.com"}
+        post book_reserve_path(book), params: { user_email: "user@example.com" }
         expect(response).to have_http_status(:ok)
       end
     end
 
     context "The book is alread reserved" do
       it "status 422" do
-        post book_reserve_path(reserved_book), params: {user_email: "user@example.com"}
+        post book_reserve_path(reserved_book), params: { user_email: "user@example.com" }
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
